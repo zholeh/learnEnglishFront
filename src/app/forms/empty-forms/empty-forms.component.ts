@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { Router } from '@angular/router';
+import { GlobalDataService } from '../../services/global-data.service';
 
 @Component({
   selector: 'app-empty-forms',
@@ -8,9 +9,9 @@ import { Router } from '@angular/router';
 })
 export class EmptyFormsComponent implements OnInit {
 
-  constructor(private router: Router) {
-    const lang = localStorage.getItem('Language');
-    if (lang === '' || lang === null) {
+  constructor(private router: Router, private data: GlobalDataService) {
+    const lang = data.getLocalStorage('Language');
+    if (lang === '' || lang === null || lang === undefined) {
       this.router.navigate(['chooseLanguage']);
     } else if (lang === 'ru') {
       console.log('');

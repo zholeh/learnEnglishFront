@@ -7,6 +7,7 @@ import { ChooseLanguageComponent } from './forms/choose-language/choose-language
 
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { EmptyFormsComponent } from './forms/empty-forms/empty-forms.component';
+import { GlobalDataService } from './services/global-data.service';
 
 
 @NgModule({
@@ -19,7 +20,12 @@ import { EmptyFormsComponent } from './forms/empty-forms/empty-forms.component';
     BrowserModule,
     AppRoutingModule,
   ],
-  providers: [],
+  providers: [GlobalDataService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+
+  constructor(private data: GlobalDataService) {
+    data.setParams('Language', localStorage.getItem('Language') || '');
+  }
+ }
