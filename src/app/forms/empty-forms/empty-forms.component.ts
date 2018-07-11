@@ -10,11 +10,11 @@ import { GlobalDataService } from '../../services/global-data.service';
 export class EmptyFormsComponent implements OnInit {
 
   constructor(private router: Router, private data: GlobalDataService) {
-    const lang = data.getLocalStorage('userLanguage');
-    const user = data.getLocalStorage('User');
-    if (lang === '' || lang === null || lang === undefined) {
+    const lang = <string>data.getLocalStorage('userLanguage');
+    const user = <string>data.getLocalStorage('user');
+    if (lang === '' || lang === null) {
       this.router.navigate(['chooseLanguage']);
-    } else if (user === '' || user === null || user === undefined) {
+    } else if (user === '' || user === null) {
       this.router.navigate(['login']);
     }
   }

@@ -10,8 +10,8 @@ import { GlobalDataService } from '../../services/global-data.service';
 export class LoginComponent implements OnInit {
 
   constructor(private router: Router, private data: GlobalDataService) {
-    const lang = data.getLocalStorage('userLanguage');
-    if (lang === '' || lang === null || lang === undefined) {
+    const lang = <string>data.getLocalStorage('userLanguage');
+    if (lang === '' || lang === null) {
       this.router.navigate(['chooseLanguage']);
     }
    }
