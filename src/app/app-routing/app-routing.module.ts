@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 
 import { ChooseLanguageComponent } from '../forms/choose-language/choose-language.component';
 import { EmptyFormsComponent } from '../forms/empty-forms/empty-forms.component';
-import { AppComponent } from '../app.component';
+import { LoginComponent } from '../forms/login/login.component';
 
 const routes: Routes = [
   {
@@ -14,6 +14,10 @@ const routes: Routes = [
   {
     path: 'chooseLanguage',
     component: ChooseLanguageComponent,
+  },
+  {
+    path: 'login',
+    component: LoginComponent,
   },
 ];
 
