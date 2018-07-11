@@ -14,17 +14,8 @@ export class ChooseLanguageComponent implements OnInit {
   ngOnInit() {
   }
 
-  private changeLanguage(lang: string) {
+  changeLanguage(lang: string) {
     this.data.setLocalStorage('userLanguage', 'en');
     this.router.navigate(['login']);
-  }
-  private clickEnglish() {
-    this.changeLanguage('en');
-  }
-  private clickUkrainian() {
-    this.changeLanguage('ua');
-  }
-  private clickRussian() {
-    this.changeLanguage('ru');
   }
 }
