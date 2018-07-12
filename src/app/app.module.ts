@@ -21,7 +21,7 @@ function initGlobalParams(data: GlobalDataService) {
     AppComponent,
     ChooseLanguageComponent,
     EmptyFormsComponent,
-    LoginComponent
+    LoginComponent,
   ],
   imports: [
     BrowserModule,

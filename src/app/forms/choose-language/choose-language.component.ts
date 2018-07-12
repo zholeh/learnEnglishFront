@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-choose-language',
   templateUrl: './choose-language.component.html',
-  styleUrls: ['./choose-language.component.css']
+  styleUrls: ['./choose-language.component.scss']
 })
 export class ChooseLanguageComponent implements OnInit {
 

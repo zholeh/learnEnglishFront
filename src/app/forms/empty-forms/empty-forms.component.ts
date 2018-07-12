@@ -5,7 +5,7 @@ import { GlobalDataService } from '../../services/global-data.service';
 @Component({
   selector: 'app-empty-forms',
   templateUrl: './empty-forms.component.html',
-  styleUrls: ['./empty-forms.component.css']
+  styleUrls: ['./empty-forms.component.scss']
 })
 export class EmptyFormsComponent implements OnInit {
 

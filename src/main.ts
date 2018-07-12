@@ -4,11 +4,8 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { AppModule } from './app/app.module';
 import { environment } from './environments/environment';
 
-export const RU_TRANS = require(`raw-loader!./messages.ru.xlf`);
-
-const a = `
-
-`;
+declare const require;
+export const RU_TRANS = ''; // require(`raw-loader!./messages.ru.xlf`);
 
 if (environment.production) {
   enableProdMode();
