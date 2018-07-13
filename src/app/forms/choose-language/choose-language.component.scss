@@ -1,9 +1,27 @@
-div {
+@import '~sass/variables';
+div#wrapper {
     height: 100vh;
-}
-input {
-    display: block;
-    align-content: center;
-    margin: auto;
-    top: 50%;
+    width: 100vw;
+    display: table;
+    div#cell {
+        display: table-cell;
+        vertical-align: middle;
+        input {
+            display: block;
+            margin: auto;
+            width: 150px;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            width: 40%;
+            height: 20%;
+            min-width: 80px;
+            min-height: 30px;
+            transition-duration: $fastTransition;
+        }
+        input:hover {
+            width: 48%;
+            height: 24%;
+            transition-duration: $fastTransition;
+        }
+    }
 }
