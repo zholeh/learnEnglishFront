@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { GlobalDataService } from '../../services/global-data.service';
+import { MatCardModule } from '@angular/material';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +15,7 @@ export class LoginComponent implements OnInit {
     if (lang === '' || lang === null) {
       this.router.navigate(['chooseLanguage']);
     }
-   }
+  }
 
   ngOnInit() {
   }

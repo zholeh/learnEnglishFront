@@ -1,6 +1,7 @@
+// @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 @import './variables';
 @import './mixins';
 
 body {
-    background-color: rgba(6, 78, 6, 0.664);
+    background-color: $mainColor;
 }

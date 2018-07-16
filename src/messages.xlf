@@ -2,6 +2,20 @@
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
   <file source-language="en" datatype="plaintext" original="ng2.template">
     <body>
+      <trans-unit id="f8da4a4a40ceb6b459a3d63ac0ae65653d62db37" datatype="html">
+        <source>Select the interface language</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/forms/choose-language/choose-language.component.ts</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9d651631c352c5546113d130d861ccf7c77a9e81" datatype="html">
+        <source>Виберіть мову інтерфейсу</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/forms/choose-language/choose-language.component.ts</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="4a5dca48600aa06a5d4a47f69db3b53e94126258" datatype="html">
         <source>Hello baby!</source>
         <context-group purpose="location">

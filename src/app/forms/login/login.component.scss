@@ -1,0 +1,32 @@
+@import '~sass/variables';
+div.div-groupe {
+    border: 3px solid #fff;
+    border-radius: 10px;
+    background: lighten($mainColor, 75%);
+    width: 50%;
+    min-width: 190px;
+    padding-top: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+div.div-block * {
+    display: inline-block;
+}
+
+div.div-block {
+    p {
+        min-width: 70px;
+    }
+    input {
+        min-width: 150px;
+        // width: 60%;
+        margin: auto;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+}
+
+// div.div-block{
+//     display: block;
+// }
