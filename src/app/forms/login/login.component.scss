@@ -1,4 +1,16 @@
 @import '~sass/variables';
 .login-card {
     max-width: 400px;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 15px;
+    min-width: 180px;
+    background-color: lighten($mainColor,75%);
+    input {
+        width: 98%;
+    }
+};
+h2 {
+    text-align: center;
 }
