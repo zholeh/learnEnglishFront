@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { GlobalDataService } from '../../services/global-data.service';
-import { MatCardModule } from '@angular/material';
 
 @Component({
   selector: 'app-login',
