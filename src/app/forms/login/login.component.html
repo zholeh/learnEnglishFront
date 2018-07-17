@@ -13,8 +13,8 @@
 
     </mat-card-actions>
     <mat-card-content>
-        <input placeholder="login" type="email" id="userPassword" autocomplete="current-password" class="email" value="" required>
-        <input placeholder="password" type="password" class="password" autocomplete="current-password" type="password" value="" required>
+        <input i18n-placeholder placeholder="{{ 'Forms.Login.login' | translate }}" type="email" id="userPassword" autocomplete="current-password" class="email" value="" required>
+        <input i18n-placeholder placeholder="{{ 'Forms.Login.password' | translate }}" type="password" class="password" autocomplete="current-password" type="password" value="" required>
     </mat-card-content>
     <mat-card-actions>
         <button mat-button i18n>{{ 'Forms.Login.Login' | translate }}</button>

@@ -2,10 +2,12 @@
 	"Forms": {
 		"Login": {
 			"Forgot password": "Нагадати пароль",
-			"Login": "Логін",
 			"Sign up": "Зареєструватись",
 			"Welcome to English as a song": "English as a song",
-            "LOGIN": "ЛОГІН"
+            "LOGIN": "ЛОГІН",
+			"login": "логін",
+			"Login": "Логін",
+            "password": "пароль"
 		}
 	}
 }

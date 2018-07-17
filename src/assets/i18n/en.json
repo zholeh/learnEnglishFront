@@ -2,10 +2,12 @@
 	"Forms": {
 		"Login": {
 			"Forgot password": "Forgot password",
-			"Login": "Login",
 			"Sign up": "Sign up",
             "Welcome to English as a song": "English as a song",
-            "LOGIN": "LOGIN"
+            "LOGIN": "LOGIN",
+            "login": "login",
+            "Login": "Login",
+            "password": "password"
 		}
 	}
 }

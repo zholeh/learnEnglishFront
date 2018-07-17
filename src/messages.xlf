@@ -9,6 +9,20 @@
           <context context-type="linenumber">1</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="801c464dfaabb8eb2c16f2cc0bf81435030174dd" datatype="html">
+        <source>login</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/forms/login/login.component.ts</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="d8b81951d25439864e92f750f7c99d7426d6517c" datatype="html">
+        <source>password</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/forms/login/login.component.ts</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="a51e30b90f22ae725a404aebc3ee5706a26e5c66" datatype="html">
         <source><x id="INTERPOLATION" equiv-text="{{ &apos;Forms.Login.Login&apos; | translate }}"/></source>
         <context-group purpose="location">
