@@ -7,8 +7,14 @@
     border-radius: 15px;
     min-width: 180px;
     background-color: lighten($mainColor,75%);
+    mat-card-header {
+        margin: auto;
+    }
     input {
         width: 98%;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        // scale(100, 100);
     }
 };
 h2 {

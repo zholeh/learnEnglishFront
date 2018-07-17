@@ -1,23 +1,24 @@
-<h2>Welcome to English as a song</h2>
+<h2>{{ 'Forms.Login.Welcome to English as a song' | translate:param }}</h2> -->
+<!-- //<h2 >Welcome to English as a song</h2> -->
 <mat-card class="login-card">
+    <button mat-button (click)="changeLanguage('en')">English</button>
+    <button mat-button (click)="changeLanguage('ua')">Ukrainian</button>
+    <button mat-button (click)="changeLanguage('ru')">Russian</button>
     <mat-card-header>
         <!-- <mat-card-title>Welcome to English as a song</mat-card-title> -->
+        <p>LOGIN</p>
     </mat-card-header>
     <mat-card-actions>
         <!-- <p>Select the interface language</p> -->
-        <button mat-button>English</button>
-        <button mat-button>Ukrainian</button>
-        <button mat-button>Russian</button>
+
     </mat-card-actions>
     <mat-card-content>
-        <p>login</p>
         <input placeholder="login" type="email" id="userPassword" autocomplete="current-password" class="email" value="" required>
-        <p>password</p>
         <input placeholder="password" type="password" class="password" autocomplete="current-password" type="password" value="" required>
     </mat-card-content>
     <mat-card-actions>
-        <button mat-button>Login</button>
-        <button mat-button>Sign up</button>
-        <button mat-button>Remind me</button>
+        <button mat-button>{{ 'Forms.Login.Login' | translate:param }}</button>
+        <button mat-button>{{ 'Forms.Login.Sign up' | translate:param }}</button>
+        <button mat-button>{{ 'Forms.Login.Forgot password' | translate:param }}</button>
     </mat-card-actions>
 </mat-card>
