@@ -1,11 +1,13 @@
 import { Injectable } from '@angular/core';
+// import { TranslateService } from '../../../../node_modules/@ngx-translate/core';
+import { TranslateService } from '../../../node_modules/@ngx-translate/core';
 
 @Injectable()
 export class GlobalDataService {
 
   private params = {};
   private ls = {}; // localStorage
-  constructor() { }
+  constructor(private translate: TranslateService) { }
   public setParams(param: string, val: any): any {
     this.params[param] = val;
   }
@@ -22,5 +24,9 @@ export class GlobalDataService {
   public getLocalStorage(param: string): any {
     this.ls[param] = this.ls[param] || JSON.parse(localStorage.getItem(param));
     return (this.ls[param]);
+  }
+
+  public changeLanguage(lang: string) {
+    this.translate.use(lang);
   }
 }
