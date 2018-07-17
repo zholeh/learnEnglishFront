@@ -2,36 +2,33 @@
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
   <file source-language="en" datatype="plaintext" original="ng2.template">
     <body>
-      <trans-unit id="f8da4a4a40ceb6b459a3d63ac0ae65653d62db37" datatype="html">
-        <source>Select the interface language</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/forms/choose-language/choose-language.component.ts</context>
-          <context context-type="linenumber">1</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="9d651631c352c5546113d130d861ccf7c77a9e81" datatype="html">
-        <source>Виберіть мову інтерфейсу</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/forms/choose-language/choose-language.component.ts</context>
-          <context context-type="linenumber">2</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="4a5dca48600aa06a5d4a47f69db3b53e94126258" datatype="html">
-        <source>Hello baby!</source>
+      <trans-unit id="ec9db0167706216dd1c2c31b623de5389491d276" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{ &apos;Forms.Login.Welcome to English as a song&apos; | translate }}"/></source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/forms/login/login.component.ts</context>
           <context context-type="linenumber">1</context>
         </context-group>
-        <note priority="1" from="description">An introduction header for this sample</note>
       </trans-unit>
-      <trans-unit id="2e8a8e73656f2cbacc170a07d1463dc01db8f95f" datatype="html">
-        <source>Hello baby!</source>
+      <trans-unit id="a51e30b90f22ae725a404aebc3ee5706a26e5c66" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{ &apos;Forms.Login.Login&apos; | translate }}"/></source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/forms/login/login.component.ts</context>
-          <context context-type="linenumber">2</context>
+          <context context-type="linenumber">20</context>
         </context-group>
-        <note priority="1" from="description">An introduction header for this sample</note>
-        <note priority="1" from="meaning">User welcome</note>
+      </trans-unit>
+      <trans-unit id="1b01e5850769ac3a6db4f63880b714c7995d3925" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{ &apos;Forms.Login.Sign up&apos; | translate }}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/forms/login/login.component.ts</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="a1373564df019f984421a9dcd59c24f8ebf7d380" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{ &apos;Forms.Login.Forgot password&apos; | translate }}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/forms/login/login.component.ts</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
       </trans-unit>
     </body>
   </file>
