@@ -8,6 +8,11 @@
             "login": "login",
             "Login": "Login",
             "password": "password"
+		},
+		"TaskCard": {
+			"Enter": "Enter",
+			"Show": "Show",
+			"Help": "Help"
 		}
 	}
 }

@@ -1,9 +1,14 @@
 {
     "cSpell.words": [
+        "Datepicker",
+        "Paginator",
         "codelyzer",
         "deeppurple",
+        "hammerjs",
         "jasminewd",
         "prebuilt",
+        "sidenav",
         "themes"
-    ]
+    ],
+    "cSpell.language": "en,ru,uk"
 }

@@ -1,0 +1,34 @@
+@import '~sass/variables';
+.sentence {
+    div {
+        display: inline;
+    }
+    .start-sentence {
+        display: inline;
+        color: darkgreen;
+    }
+    input {
+        height: 20px;
+    }
+    .secret-word {
+        display: inline;
+        padding-left: 2px;
+        padding-right: 2px;
+        max-width: 350px;
+        background-color: lighten($mainColor,85%);
+        color: darkgreen;
+        font-size: inherit;
+    }
+    .end-sentence {
+        display: inline;
+        color: darkgreen;
+    }
+    .input-buffer {
+        position: absolute;
+        top: 100px;
+        left: 100px; 
+        visibility: hidden;
+        white-space: pre;
+        width: auto;
+    }
+}

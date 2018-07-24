@@ -1,0 +1,36 @@
+@import '~sass/variables';
+.task-card {
+    max-width: 400px;
+    width: 95%;
+    margin: auto; // margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 15px;
+    min-width: 180px;
+    background-color: whitesmoke;
+    mat-card-header {
+        margin: auto;
+    }
+    .translate-card {
+        border-radius: 15px;
+    }
+    .label-translate {
+        color: navy;
+    }
+    img {
+        width: 16px;
+        height: 16px;
+        visibility: inherit;
+    }
+    .sidenav-container {
+        height: 24px;
+    }
+    rating {
+        visibility: inherit;
+    }
+}
+
+.word-translate {
+    margin: auto;
+    text-align: center;
+    color: whitesmoke;
+}
