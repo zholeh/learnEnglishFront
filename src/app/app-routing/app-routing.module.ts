@@ -9,8 +9,8 @@ import { LoginComponent } from '../forms/login/login.component';
 const routes: Routes = [
   {
     path: '',
-    component: EmptyFormsComponent,
-    // component: StudyWordsFromSentenceComponent,
+    // component: EmptyFormsComponent,
+    component: StudyWordsFromSentenceComponent,
   },
   {
     path: 'chooseLanguage',
