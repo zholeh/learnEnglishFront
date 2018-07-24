@@ -1,8 +1,13 @@
 <h2 i18n>{{ 'Forms.Login.Welcome to English as a song' | translate }}</h2> -->
 <!-- //<h2 >Welcome to English as a song</h2> -->
 <mat-card class="login-card">
-    <button mat-button (click)="changeLanguage('en')">English</button>
-    <button mat-button (click)="changeLanguage('ua')">Ukrainian</button>
+    <button class="mat-button eng" (click)="changeLanguage('en')">
+        <!-- <img src='images/flag_eng.png' /> -->
+        <!-- <img src="../../../../images/flag_eng_.png" /> -->
+    </button>
+    <button mat-button (click)="changeLanguage('ua')">
+        <img src="http://i.piccy.info/i9/cf2aa66688ddd972bf98077857abf0d5/1532358178/418/1259412/Ukraine_Flag_16x16.png" />
+    </button>
     <button mat-button (click)="changeLanguage('ru')">Russian</button>
     <mat-card-header>
         <!-- <mat-card-title>Welcome to English as a song</mat-card-title> -->
