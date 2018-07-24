@@ -4,10 +4,12 @@
         "Paginator",
         "codelyzer",
         "deeppurple",
+        "devkit",
         "hammerjs",
         "jasminewd",
         "prebuilt",
         "sidenav",
+        "styleext",
         "themes"
     ],
     "cSpell.language": "en,ru,uk"
