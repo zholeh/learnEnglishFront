@@ -12,11 +12,13 @@ if (environment.production) {
   enableProdMode();
 }
 
-platformBrowserDynamic().bootstrapModule(AppModule, {
-  providers: [
-    {provide: TRANSLATIONS, useValue: RU_TRANS},
-    {provide: TRANSLATIONS_FORMAT, useValue: 'xlf'},
-    {provide: LOCALE_ID, useValue: 'ru'}
-  ]
-})
-.catch(err => console.log(err));
+platformBrowserDynamic().bootstrapModule(AppModule,
+  // {
+  //   providers: [
+  //     { provide: TRANSLATIONS, useValue: RU_TRANS },
+  //     { provide: TRANSLATIONS_FORMAT, useValue: 'xlf' },
+  //     { provide: LOCALE_ID, useValue: 'ru' }
+  //   ]
+  // }
+)
+  .catch(err => console.log(err));
