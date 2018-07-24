@@ -1,12 +1,13 @@
-import { Injectable } from '@angular/core';
-// import { TranslateService } from '../../../../node_modules/@ngx-translate/core';
-import { TranslateService } from '../../../node_modules/@ngx-translate/core';
+import { Injectable, EventEmitter } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
+import { ISentence } from './interfaces';
 
 @Injectable()
 export class GlobalDataService {
 
   private params = {};
   private ls = {}; // localStorage
+
   constructor(private translate: TranslateService) { }
   public setParams(param: string, val: any): any {
     this.params[param] = val;
@@ -28,5 +29,23 @@ export class GlobalDataService {
 
   public changeLanguage(lang: string) {
     this.translate.use(lang);
+  }
+}
+
+@Injectable()
+export class EmitData {
+
+  public sentence: EventEmitter<ISentence> = new EventEmitter();
+  public previousSentence: EventEmitter<ISentence> = new EventEmitter();
+  public nextSentence: EventEmitter<ISentence> = new EventEmitter();
+
+  public emitSentence(sent: ISentence, currentSentence: number) {
+    this.sentence.emit(sent);
+  }
+  public emitPrevSentence(sent: ISentence, currentSentence: number) {
+    this.previousSentence.emit(sent);
+  }
+  public emitNextSentence(sent: ISentence, currentSentence: number) {
+    this.nextSentence.emit(sent);
   }
 }

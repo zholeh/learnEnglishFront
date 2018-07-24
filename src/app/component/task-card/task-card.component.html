@@ -1,0 +1,25 @@
+<div class="col-form-label col-form-label-lg word-translate">{{ translateWord }}</div>
+<mat-card class="task-card">
+    <mat-sidenav-container class="sidenav-container">
+        <mat-sidenav opened mode="side">
+            <rating [(ngModel)]="rate" [max]="max" [readonly]="isReadonly"></rating>
+        </mat-sidenav>
+        <mat-sidenav opened mode="side" position="end">
+           <img src="../../../assets/pic/settings.png" alt="MDN">
+        </mat-sidenav>
+    </mat-sidenav-container>
+    <mat-card-content>
+        <app-sentence>
+        </app-sentence>
+        <mat-card class="translate-card">
+            <mat-card-content>
+                <p class="label-info label-translate">{{ translate }}</p>
+            </mat-card-content>
+        </mat-card>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-button i18n>{{ 'Forms.TaskCard.Enter' | translate }}</button>
+        <button mat-button i18n>{{ 'Forms.TaskCard.Show' | translate }}</button>
+        <button mat-button i18n>{{ 'Forms.TaskCard.Help' | translate }}</button>
+    </mat-card-actions>
+</mat-card>

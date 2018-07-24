@@ -1,0 +1,6 @@
+<div class="sentence">
+  <div class="input-group input-group-sm start-sentence">{{ startSentence }}</div>
+  <input type="text" [(ngModel)]="enteringWord" class="form-control secret-word" [ngStyle]="{'min-width':minWidthFromBuffer, 'width' :widthFromBuffer}" (input)="onChangeSecretWord($event)">
+  <div *ngIf="conditionBuffer" class="input-group input-group-sm input-buffer" #inputBuffer>{{ secretWord }}</div>
+  <div class="input-group input-group-sm end-sentence">{{ endSentence }}</div>
+</div>
