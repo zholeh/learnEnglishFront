@@ -1,13 +1,8 @@
 <div class="card-control-prev" (click)="previousSentence()">
     <span class="card-control-prev-icon"></span>
 </div>
-<div 
-    [@nextPrevTrigger]="direction"
-    (swipeup)="swipe($event)" (swipedown)="swipe($event)"
-    (swipeleft)="swipe($event)" (swiperight)="swipe($event)"
-    >
-
-    <app-task-card [nameCard]="'current'" ></app-task-card>
+<div [@nextPrevTrigger]="direction" (swipeup)="swipe($event)" (swipedown)="swipe($event)">
+    <app-task-card [nameCard]="'current'"></app-task-card>
 </div>
 <div class="card-control-next" (click)="nextSentence()">
     <span class="card-control-next-icon"></span>

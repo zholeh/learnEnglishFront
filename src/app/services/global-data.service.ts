@@ -36,8 +36,6 @@ export class GlobalDataService {
 export class EmitData {
 
   public sentence: EventEmitter<ISentence> = new EventEmitter();
-  public previousSentence: EventEmitter<ISentence> = new EventEmitter();
-  public nextSentence: EventEmitter<ISentence> = new EventEmitter();
 
   public emitSentence(sent: ISentence, currentSentence: number) {
     this.sentence.emit(sent);

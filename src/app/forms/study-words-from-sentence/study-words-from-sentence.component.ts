@@ -46,7 +46,6 @@ export class StudyWordsFromSentenceComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit() {
     this.emitData.sentence.emit(this.sentences[this.currentSentence]);
-    this.emitData.previousSentence.emit(this.sentences[this.currentSentence - 1]);
   }
 
   previousSentence() {
