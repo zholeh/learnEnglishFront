@@ -1,12 +1,12 @@
 import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import { EmitData } from '../../services/global-data.service';
 import { ISentence } from '../../services/interfaces';
-import { NEXT_PREV_ANIMATION } from '../../animations/animation';
+import { HIDE_UP_DOWN_ANIMATION } from '../../animations/animation';
 @Component({
   selector: 'app-study-words-from-sentence',
   templateUrl: './study-words-from-sentence.component.html',
   styleUrls: ['./study-words-from-sentence.component.scss'],
-  animations: [NEXT_PREV_ANIMATION]
+  animations: [HIDE_UP_DOWN_ANIMATION]
 })
 
 export class StudyWordsFromSentenceComponent implements OnInit, AfterViewInit {
@@ -15,8 +15,7 @@ export class StudyWordsFromSentenceComponent implements OnInit, AfterViewInit {
 
   private sentences: Array<ISentence> = [];
   private currentSentence: number;
-  private direction = 'next';
-
+  private upDown = '';
 
   constructor(private emitData: EmitData) {
 
@@ -48,25 +47,35 @@ export class StudyWordsFromSentenceComponent implements OnInit, AfterViewInit {
     this.emitData.sentence.emit(this.sentences[this.currentSentence]);
   }
 
-  previousSentence() {
-    this.direction = 'prev';
-    this.currentSentence = Math.max(this.currentSentence - 1, 0);
-    this.emitData.sentence.emit(this.sentences[this.currentSentence]);
+  changeSentence(newNum: number, upDown: string) {
+    if (newNum >= 0 && newNum < (this.sentences.length)) {
+      this.currentSentence = newNum;
+      this.upDown = upDown;
+    }
+  }
 
+  previousSentence() {
+    this.changeSentence(this.currentSentence - 1, 'hideUp');
   }
 
   nextSentence() {
-    this.direction = 'next';
-    this.currentSentence = Math.min(this.currentSentence + 1, this.sentences.length - 1);
-    this.emitData.sentence.emit(this.sentences[this.currentSentence]);
+    this.changeSentence(this.currentSentence + 1, 'hideDown');
   }
 
   swipe(event) {
-
     if (event.type === 'swipeup') {
-      this.nextSentence();
-    } else if (event.type === 'swipedown') {
       this.previousSentence();
+    } else if (event.type === 'swipedown') {
+      this.nextSentence();
     }
+  }
+
+  animEnd(event) {
+    if (this.upDown === 'hideUp') {
+      this.upDown = 'next';
+    } else {
+      this.upDown = 'prev';
+    }
+    this.emitData.sentence.emit(this.sentences[this.currentSentence]);
   }
 }

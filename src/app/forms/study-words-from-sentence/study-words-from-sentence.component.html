@@ -1,7 +1,11 @@
 <div class="card-control-prev" (click)="previousSentence()">
     <span class="card-control-prev-icon"></span>
 </div>
-<div [@nextPrevTrigger]="direction" (swipeup)="swipe($event)" (swipedown)="swipe($event)">
+<div [@hideUpDownTrigger]="upDown" 
+    (@hideUpDownTrigger.done)="animEnd($event)"
+    (swipeup)="swipe($event)" 
+    (swipedown)="swipe($event)">
+
     <app-task-card [nameCard]="'current'"></app-task-card>
 </div>
 <div class="card-control-next" (click)="nextSentence()">
