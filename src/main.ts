@@ -3,7 +3,6 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
 import { AppModule } from './app/app.module';
 import { environment } from './environments/environment';
-import 'hammerjs';
 
 declare const require;
 export const RU_TRANS = ''; // require(`raw-loader!./messages.ru.xlf`);
@@ -13,12 +12,12 @@ if (environment.production) {
 }
 
 platformBrowserDynamic().bootstrapModule(AppModule,
-  // {
-  //   providers: [
-  //     { provide: TRANSLATIONS, useValue: RU_TRANS },
-  //     { provide: TRANSLATIONS_FORMAT, useValue: 'xlf' },
-  //     { provide: LOCALE_ID, useValue: 'ru' }
-  //   ]
-  // }
+  {
+    providers: [
+      { provide: TRANSLATIONS, useValue: RU_TRANS },
+      { provide: TRANSLATIONS_FORMAT, useValue: 'xlf' },
+      { provide: LOCALE_ID, useValue: 'ru' }
+    ]
+  }
 )
   .catch(err => console.log(err));

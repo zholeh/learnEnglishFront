@@ -42,10 +42,4 @@ export class EmitData {
   public emitSentence(sent: ISentence, currentSentence: number) {
     this.sentence.emit(sent);
   }
-  public emitPrevSentence(sent: ISentence, currentSentence: number) {
-    this.previousSentence.emit(sent);
-  }
-  public emitNextSentence(sent: ISentence, currentSentence: number) {
-    this.nextSentence.emit(sent);
-  }
 }

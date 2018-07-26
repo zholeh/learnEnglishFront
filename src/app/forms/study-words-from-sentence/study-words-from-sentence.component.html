@@ -1,13 +1,13 @@
 <div class="card-control-prev" (click)="previousSentence()">
     <span class="card-control-prev-icon"></span>
 </div>
-<div (@nextPrevTrigger.done)="animationDone($event)" [@nextPrevTrigger]="direction">
-    <!-- previous sentence -->
-    <app-task-card [nameCard]="'prev'" [ngStyle]="{'visibility':visiblePrevCard}"></app-task-card>
-    <!-- current sentence -->
-    <app-task-card [nameCard]="'current'" [ngStyle]="{'visibility':visibleCurrentCard}"></app-task-card>
-    <!-- next sentence -->
-    <app-task-card [nameCard]="'next'" [ngStyle]="{'visibility':visibleNextCard}"></app-task-card>
+<div 
+    [@nextPrevTrigger]="direction"
+    (swipeup)="swipe($event)" (swipedown)="swipe($event)"
+    (swipeleft)="swipe($event)" (swiperight)="swipe($event)"
+    >
+
+    <app-task-card [nameCard]="'current'" ></app-task-card>
 </div>
 <div class="card-control-next" (click)="nextSentence()">
     <span class="card-control-next-icon"></span>

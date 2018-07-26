@@ -35,17 +35,6 @@ export class TaskCardComponent implements OnInit, AfterViewInit {
         this.fillCard(response, 'current');
       }
     );
-    this.emitData.previousSentence.subscribe(
-      (response: ISentence) => {
-        this.fillCard(response, 'prev');
-      }
-    );
-    this.emitData.nextSentence.subscribe(
-      (response: ISentence) => {
-
-        this.fillCard(response, 'next');
-      }
-    );
   }
 
   ngOnInit() {

@@ -3,6 +3,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HammerGestureConfig, HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
 
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
@@ -19,6 +20,12 @@ import { TaskCardComponent } from './component/task-card/task-card.component';
 import { SentenceComponent } from './component/sentence/sentence.component';
 import { StudyWordsFromSentenceComponent } from './forms/study-words-from-sentence/study-words-from-sentence.component';
 import { MaterialModule } from './app.material';
+
+export class HammerConfig extends HammerGestureConfig {
+  overrides = <any>{
+    'swipe': { velocity: 0.4, threshold: 20, direction: 30 } // override default settings
+  };
+}
 
 function initGlobalParams(data: GlobalDataService) {
   data.setLocalStorage('userLanguage', data.getLocalStorage('userLanguage'));
@@ -53,8 +60,11 @@ function initGlobalParams(data: GlobalDataService) {
       })
     ],
   ],
-  schemas: [ NO_ERRORS_SCHEMA ],
-  providers: [GlobalDataService, EmitData],
+  schemas: [NO_ERRORS_SCHEMA],
+  providers: [GlobalDataService, EmitData, {
+    provide: HAMMER_GESTURE_CONFIG,
+    useClass: HammerConfig
+  }],
   bootstrap: [AppComponent]
 })
 

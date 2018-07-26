@@ -1,9 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import { EmitData } from '../../services/global-data.service';
 import { ISentence } from '../../services/interfaces';
-import { NEXT_PREV_ANIMATION } from '../../animations/next-prev.animation.module';
-
-
+import { NEXT_PREV_ANIMATION } from '../../animations/animation';
 @Component({
   selector: 'app-study-words-from-sentence',
   templateUrl: './study-words-from-sentence.component.html',
@@ -19,9 +17,6 @@ export class StudyWordsFromSentenceComponent implements OnInit, AfterViewInit {
   private currentSentence: number;
   private direction = 'next';
 
-  private visiblePrevCard = 'visible';
-  private visibleNextCard = 'hidden';
-  private visibleCurrentCard = 'visible';
 
   constructor(private emitData: EmitData) {
 
@@ -47,36 +42,32 @@ export class StudyWordsFromSentenceComponent implements OnInit, AfterViewInit {
     this.currentSentence = 1;
   }
 
-  ngOnInit() {
-
-  }
+  ngOnInit() { }
 
   ngAfterViewInit() {
-
     this.emitData.sentence.emit(this.sentences[this.currentSentence]);
-    this.emitData.nextSentence.emit(this.sentences[this.currentSentence + 1]);
     this.emitData.previousSentence.emit(this.sentences[this.currentSentence - 1]);
   }
 
   previousSentence() {
-
-    this.visiblePrevCard = 'visible';
-    this.visibleCurrentCard = 'hidden';
-    // this.emitData.previousSentence.emit(this.sentences[this.currentSentence - 1]);
     this.direction = 'prev';
     this.currentSentence = Math.max(this.currentSentence - 1, 0);
-    // this.emitData.sentence.emit(this.sentences[this.currentSentence]);
+    this.emitData.sentence.emit(this.sentences[this.currentSentence]);
+
   }
 
   nextSentence() {
-
     this.direction = 'next';
     this.currentSentence = Math.min(this.currentSentence + 1, this.sentences.length - 1);
+    this.emitData.sentence.emit(this.sentences[this.currentSentence]);
   }
 
-  animationDone() {
-    // this.emitData.sentence.emit(this.sentences[this.currentSentence]);
-    // this.emitData.nextSentence.emit(this.sentences[this.currentSentence + 1]);
-    // this.emitData.previousSentence.emit(this.sentences[this.currentSentence - 1]);
+  swipe(event) {
+
+    if (event.type === 'swipeup') {
+      this.nextSentence();
+    } else if (event.type === 'swipedown') {
+      this.previousSentence();
+    }
   }
 }
