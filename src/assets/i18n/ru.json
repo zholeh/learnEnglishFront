@@ -13,6 +13,15 @@
 			"Enter": "Ввести",
 			"Show": "Показать",
 			"Help": "Помощь"
+		},
+		"signUp": {
+			"REGISTRATION": "РЕГИСТРАЦИЯ",
+			"firstName": "имя",
+			"secondName": "фамилия",
+			"eMail": "email",
+			"password": "пароль",
+			"re-password": "пароль",
+			"text": "Пожалуйста, заполните e-mail и пароль."
 		}
 	}
 }

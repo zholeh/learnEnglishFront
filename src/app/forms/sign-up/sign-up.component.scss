@@ -1,0 +1,18 @@
+mat-card {
+    max-width: 500px;
+    width: 80%;
+    mat-card-content {
+        .first-name:before {
+            content: "\1F464";
+        }
+        .second-name:before {
+            content: "\1F464";
+        }
+        .e-mail:before {
+            content: "\0040";
+        }
+        .password:before {
+            content: "\26BF";
+        }
+    }
+}

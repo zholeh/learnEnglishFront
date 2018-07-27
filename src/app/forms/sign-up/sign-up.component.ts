@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GlobalDataService } from '../../services/global-data.service';
 
 @Component({
   selector: 'app-sign-up',
@@ -7,7 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SignUpComponent implements OnInit {
 
-  constructor() { }
+  constructor(private data: GlobalDataService) {
+    // const lang = this.data.getLocalStorage('userLanguage');
+    // this.data.changeLanguage(lang);
+  }
 
   ngOnInit() {
   }

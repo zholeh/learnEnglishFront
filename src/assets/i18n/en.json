@@ -13,6 +13,15 @@
 			"Enter": "Enter",
 			"Show": "Show",
 			"Help": "Help"
+		},
+		"signUp": {
+			"REGISTRATION": "REGISTRATION",
+			"firstName": "first name",
+			"secondName": "second name",
+			"eMail": "email",
+			"password": "password",
+			"re-password": "repeat password",
+			"text": "Please enter your email address and a password of your choice."
 		}
 	}
 }
