@@ -1,8 +1,9 @@
 <div class="card-control-prev" (click)="previousSentence()">
     <span class="card-control-prev-icon"></span>
 </div>
-<div [@hideUpDownTrigger]="upDown" 
+<div [@hideUpDownTrigger]="triggerAnimation.hide" 
     (@hideUpDownTrigger.done)="animEnd($event)"
+    [@showUpDownTrigger]="triggerAnimation.show" 
     (swipeup)="swipe($event)" 
     (swipedown)="swipe($event)">
 

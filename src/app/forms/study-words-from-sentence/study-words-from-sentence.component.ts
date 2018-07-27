@@ -1,12 +1,12 @@
 import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import { EmitData } from '../../services/global-data.service';
 import { ISentence } from '../../services/interfaces';
-import { HIDE_UP_DOWN_ANIMATION } from '../../animations/animation';
+import { HIDE_UP_DOWN_ANIMATION, SHOW_UP_DOWN_ANIMATION } from '../../animations/animation';
 @Component({
   selector: 'app-study-words-from-sentence',
   templateUrl: './study-words-from-sentence.component.html',
   styleUrls: ['./study-words-from-sentence.component.scss'],
-  animations: [HIDE_UP_DOWN_ANIMATION]
+  animations: [HIDE_UP_DOWN_ANIMATION, SHOW_UP_DOWN_ANIMATION]
 })
 
 export class StudyWordsFromSentenceComponent implements OnInit, AfterViewInit {
@@ -15,7 +15,11 @@ export class StudyWordsFromSentenceComponent implements OnInit, AfterViewInit {
 
   private sentences: Array<ISentence> = [];
   private currentSentence: number;
-  private upDown = '';
+  private triggerAnimation = {
+    hide: '',
+    show: ''
+  };
+  private numberTransition: number;
 
   constructor(private emitData: EmitData) {
 
@@ -47,19 +51,28 @@ export class StudyWordsFromSentenceComponent implements OnInit, AfterViewInit {
     this.emitData.sentence.emit(this.sentences[this.currentSentence]);
   }
 
+  getRandomArbitary(min: number, max: number): number {
+    return Math.round(Math.random() * (max - min) + min);
+  }
+
   changeSentence(newNum: number, upDown: string) {
-    if (newNum >= 0 && newNum < (this.sentences.length)) {
+    if (
+      newNum >= 0 &&
+      newNum < (this.sentences.length)
+    ) {
       this.currentSentence = newNum;
-      this.upDown = upDown;
+
+      this.numberTransition = this.getRandomArbitary(1, 5);
+      this.triggerAnimation.hide = '' + upDown + '_' + this.numberTransition;
     }
   }
 
   previousSentence() {
-    this.changeSentence(this.currentSentence - 1, 'hideUp');
+    this.changeSentence(this.currentSentence - 1, 'up');
   }
 
   nextSentence() {
-    this.changeSentence(this.currentSentence + 1, 'hideDown');
+    this.changeSentence(this.currentSentence + 1, 'down');
   }
 
   swipe(event) {
@@ -71,10 +84,10 @@ export class StudyWordsFromSentenceComponent implements OnInit, AfterViewInit {
   }
 
   animEnd(event) {
-    if (this.upDown === 'hideUp') {
-      this.upDown = 'next';
-    } else {
-      this.upDown = 'prev';
+    if (this.triggerAnimation.hide === 'up' + '_' + this.numberTransition) {
+      this.triggerAnimation.show = 'down' + '_' + this.numberTransition;
+    } else if (this.triggerAnimation.hide === 'down' + '_' + this.numberTransition) {
+      this.triggerAnimation.show = 'up' + '_' + this.numberTransition;
     }
     this.emitData.sentence.emit(this.sentences[this.currentSentence]);
   }
