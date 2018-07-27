@@ -20,6 +20,7 @@ export class LoginComponent implements OnInit {
   }
 
   private changeLanguage(lang: string) {
+    this.data.setLocalStorage('userLanguage', lang);
     this.data.changeLanguage(lang);
   }
 
