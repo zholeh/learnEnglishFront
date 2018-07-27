@@ -62,7 +62,7 @@ export class StudyWordsFromSentenceComponent implements OnInit, AfterViewInit {
     ) {
       this.currentSentence = newNum;
 
-      this.numberTransition = this.getRandomArbitary(1, 5);
+      this.numberTransition = this.getRandomArbitary(1, 7);
       this.triggerAnimation.hide = '' + upDown + '_' + this.numberTransition;
     }
   }
