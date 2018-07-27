@@ -6,17 +6,22 @@
     margin-bottom: 10px;
     border-radius: 15px;
     min-width: 180px;
-    background-color: lighten($mainColor,75%);
+    background-color: lighten($mainColor, 75%);
     mat-card-header {
         margin: auto;
     }
-    input {
-        width: 98%;
-        margin-top: 5px;
-        margin-bottom: 5px;
-        // scale(100, 100);
+    .fa-cont {
+        width: 32px;
     }
-};
+    .fa-user:before {
+        content: "\1F464";
+    }
+    .fa-passwords:before {
+        content: "\26BF";
+    }
+}
+
+;
 h2 {
     text-align: center;
 }
