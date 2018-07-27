@@ -23,4 +23,16 @@ export class LoginComponent implements OnInit {
     this.data.changeLanguage(lang);
   }
 
+  private login() {
+    this.router.navigate(['signUp']);
+  }
+
+  private signUp() {
+    this.router.navigate(['signUp']);
+  }
+
+  private forgot() {
+    this.router.navigate(['signUp']);
+  }
+
 }

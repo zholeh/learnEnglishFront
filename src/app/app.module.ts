@@ -20,6 +20,7 @@ import { TaskCardComponent } from './component/task-card/task-card.component';
 import { SentenceComponent } from './component/sentence/sentence.component';
 import { StudyWordsFromSentenceComponent } from './forms/study-words-from-sentence/study-words-from-sentence.component';
 import { MaterialModule } from './app.material';
+import { SignUpComponent } from './forms/sign-up/sign-up.component';
 
 export class HammerConfig extends HammerGestureConfig {
   overrides = <any>{
@@ -40,7 +41,8 @@ function initGlobalParams(data: GlobalDataService) {
     LoginComponent,
     TaskCardComponent,
     SentenceComponent,
-    StudyWordsFromSentenceComponent
+    StudyWordsFromSentenceComponent,
+    SignUpComponent,
   ],
   imports: [
     BrowserModule,
