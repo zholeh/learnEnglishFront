@@ -1,6 +1,6 @@
 import { Injectable, EventEmitter } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { ISentence } from './interfaces';
+import { Sentence } from './classes';
 
 @Injectable()
 export class GlobalDataService {
@@ -35,9 +35,9 @@ export class GlobalDataService {
 @Injectable()
 export class EmitData {
 
-  public sentence: EventEmitter<ISentence> = new EventEmitter();
+  public sentence: EventEmitter<Sentence> = new EventEmitter();
 
-  public emitSentence(sent: ISentence, currentSentence: number) {
+  public emitSentence(sent: Sentence, currentSentence: number) {
     this.sentence.emit(sent);
   }
 }

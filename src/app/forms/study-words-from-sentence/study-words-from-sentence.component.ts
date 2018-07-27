@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import { EmitData } from '../../services/global-data.service';
-import { ISentence } from '../../services/interfaces';
+import { Sentence } from '../../services/classes';
 import { HIDE_UP_DOWN_ANIMATION, SHOW_UP_DOWN_ANIMATION } from '../../animations/animation';
 @Component({
   selector: 'app-study-words-from-sentence',
@@ -13,7 +13,7 @@ export class StudyWordsFromSentenceComponent implements OnInit, AfterViewInit {
 
   @ViewChild('app-sentence') appSentence: ElementRef;
 
-  private sentences: Array<ISentence> = [];
+  private sentences: Array<Sentence> = [];
   private currentSentence: number;
   private triggerAnimation = {
     hide: '',
@@ -23,24 +23,22 @@ export class StudyWordsFromSentenceComponent implements OnInit, AfterViewInit {
 
   constructor(private emitData: EmitData) {
 
-    let sentence: ISentence;
-
-    sentence = {
-      startSentence: 'Hello! I need some ',
-      secretWord: 'advice',
-      endSentence: ' from you. Can you help me? - Yes, I can help you! Ask!',
-      translate: 'Привет! Мне нужен совет. Можешь мне помочь? -Да, я могу помочь тебе! Спрашивай!',
-      translateWord: 'Совет, консультация, мнение'
-    };
+    let sentence = new Sentence(
+      'Hello! I need some ',
+      'advice',
+      ' from you. Can you help me? - Yes, I can help you! Ask!',
+      'Привет! Мне нужен совет. Можешь мне помочь? -Да, я могу помочь тебе! Спрашивай!',
+      'Совет, консультация, мнение'
+    );
     this.sentences.push(sentence);
 
-    sentence = {
-      startSentence: 'Thank you for ',
-      secretWord: 'everything',
-      endSentence: ' what you do.',
-      translate: 'Спасибо тебе за все, что ты сделал.',
-      translateWord: 'все, все самое важное'
-    };
+    sentence = new Sentence(
+      'Thank you for ',
+      'everything',
+      ' what you do.',
+      'Спасибо тебе за все, что ты сделал.',
+      'все, все самое важное'
+    );
     this.sentences.push(sentence);
     this.currentSentence = 1;
   }

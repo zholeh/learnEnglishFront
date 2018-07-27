@@ -1,7 +1,7 @@
 import { Input, Component, ChangeDetectorRef, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { MatExpansionPanel, MatExpansionPanelHeader } from '@angular/material';
 import { EmitData } from '../../services/global-data.service';
-import { ISentence } from '../../services/interfaces';
+import { Sentence } from '../../services/classes';
 
 @Component({
   selector: 'app-task-card',
@@ -18,7 +18,7 @@ export class TaskCardComponent implements OnInit, AfterViewInit {
   max = 10;
   isReadonly = true;
 
-  fillCard(sent: ISentence, nameCard: string) {
+  fillCard(sent: Sentence, nameCard: string) {
 
     if (this.nameCard === nameCard && sent !== undefined) {
       this.translate = sent.translate;
@@ -31,7 +31,7 @@ export class TaskCardComponent implements OnInit, AfterViewInit {
   constructor(private changeDetectionRef: ChangeDetectorRef, private emitData: EmitData) {
 
     this.emitData.sentence.subscribe(
-      (response: ISentence) => {
+      (response: Sentence) => {
         this.fillCard(response, 'current');
       }
     );

@@ -1,6 +1,6 @@
 import { Input, Component, ElementRef, OnInit, ViewChild, AfterViewInit, ChangeDetectorRef } from '@angular/core';
 import { EmitData } from '../../services/global-data.service';
-import { ISentence } from '../../services/interfaces';
+import { Sentence } from '../../services/classes';
 
 @Component({
   selector: 'app-sentence',
@@ -10,13 +10,7 @@ import { ISentence } from '../../services/interfaces';
 export class SentenceComponent implements OnInit, AfterViewInit {
 
   @ViewChild('inputBuffer') inputBuffer: ElementRef;
-  private sentence: ISentence = {
-    endSentence: '',
-    startSentence: '',
-    secretWord: '',
-    translate: '',
-    translateWord: ''
-  };
+  private sentence = new Sentence();
   private secretWordBuffer: string;
 
   private minWidthFromBuffer = '1px';
@@ -60,7 +54,7 @@ export class SentenceComponent implements OnInit, AfterViewInit {
 
   constructor(private changeDetectionRef: ChangeDetectorRef, private emitData: EmitData) {
     this.emitData.sentence.subscribe(
-      (response: ISentence) => {
+      (response: Sentence) => {
         this.sentence = response;
 
         this.setMinWidthWord();
