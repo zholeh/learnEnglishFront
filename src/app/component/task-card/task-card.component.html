@@ -1,14 +1,15 @@
 <div class="col-form-label col-form-label-lg word-translate">{{ translateWord }}</div>
 <mat-card class="task-card">
-    <mat-sidenav-container class="sidenav-container">
+    <!-- <mat-sidenav-container class="sidenav-container">
         <mat-sidenav opened mode="side">
             <rating [(ngModel)]="rate" [max]="max" [readonly]="isReadonly"></rating>
         </mat-sidenav>
         <mat-sidenav opened mode="side" position="end">
            <img src="../../../assets/pic/settings.png" alt="MDN">
         </mat-sidenav>
-    </mat-sidenav-container>
+    </mat-sidenav-container> -->
     <mat-card-content>
+        <rating [(ngModel)]="rate" [max]="max" [readonly]="isReadonly"></rating>
         <app-sentence>
         </app-sentence>
         <mat-card class="translate-card">
