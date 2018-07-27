@@ -10,25 +10,24 @@ import { ISentence } from '../../services/interfaces';
 export class SentenceComponent implements OnInit, AfterViewInit {
 
   @ViewChild('inputBuffer') inputBuffer: ElementRef;
-  @Input() startSentence: string;
-  @Input() endSentence: string;
-  private secretWord: string;
+  private sentence: ISentence = {
+    endSentence: '',
+    startSentence: '',
+    secretWord: '',
+    translate: '',
+    translateWord: ''
+  };
   private secretWordBuffer: string;
-  private translate: string;
-  private translateWord: string;
 
-  private conditionBuffer = true;
   private minWidthFromBuffer = '1px';
   private widthFromBuffer = this.minWidthFromBuffer;
   private afterViewInit = false;
-  private enteringWord = '';
 
   /**
    * Sets width word
    */
   private setWidthWord() {
-
-    this.secretWord = this.enteringWord;
+    this.secretWordBuffer = this.sentence.secretWord;
     this.changeDetectionRef.detectChanges();
     this.widthFromBuffer = '' +
       Math.max(
@@ -36,17 +35,18 @@ export class SentenceComponent implements OnInit, AfterViewInit {
         (this.inputBuffer.nativeElement.offsetWidth + 6)
       ) +
       'px';
-    this.secretWord = '';
+    this.secretWordBuffer = '';
     this.changeDetectionRef.detectChanges();
   }
 
   private setMinWidthWord() {
-
     if (this.afterViewInit) {
-      this.secretWord = this.secretWordBuffer;
+      this.secretWordBuffer = this.sentence.secretWord;
       this.changeDetectionRef.detectChanges();
-      this.minWidthFromBuffer = '' + (this.inputBuffer.nativeElement.offsetWidth + 6) + 'px';
-      this.secretWord = '';
+      this.minWidthFromBuffer = '' +
+        (this.inputBuffer.nativeElement.offsetWidth + 6) +
+        'px';
+      this.secretWordBuffer = '';
       this.changeDetectionRef.detectChanges();
 
       this.setWidthWord();
@@ -61,11 +61,7 @@ export class SentenceComponent implements OnInit, AfterViewInit {
   constructor(private changeDetectionRef: ChangeDetectorRef, private emitData: EmitData) {
     this.emitData.sentence.subscribe(
       (response: ISentence) => {
-        this.secretWordBuffer = response.secretWord;
-        this.startSentence = response.startSentence;
-        this.endSentence = response.endSentence;
-        this.translate = response.translate;
-        this.translateWord = response.translateWord;
+        this.sentence = response;
 
         this.setMinWidthWord();
       }
