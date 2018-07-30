@@ -16,4 +16,10 @@ export class SignUpComponent implements OnInit {
   ngOnInit() {
   }
 
+  signUpWithGoogle() {
+  }
+  signUpWithFacebook() {
+  }
+  signUpWithEmail() {
+  }
 }

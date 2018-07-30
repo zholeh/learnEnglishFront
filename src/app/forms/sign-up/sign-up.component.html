@@ -1,4 +1,4 @@
-<mat-card class="mx-auto mt-5 align-middle">
+<mat-card class="mx-auto mt-3 align-middle">
   <mat-card-header>
     <mat-card-title>
       <div class="text-xl-center font-weight-bold text-center">
@@ -11,48 +11,54 @@
       </div>
     </mat-card-subtitle>
   </mat-card-header>
+  <mat-card-actions>
+    <div class="">
+      <button i18n type="button" class="btn btn-primary btn-lg btn-block" (click)="signUpWithGoogle()">{{ 'Forms.signUp.withGoogle' | translate }}</button>
+      <button i18n type="button" class="btn btn-primary btn-lg btn-block" (click)="signUpWithFacebook()">{{ 'Forms.signUp.withFacebook' | translate }}</button>
+    </div>
+  </mat-card-actions>
   <mat-card-content>
-    <div class="input-group input-group-sm mb-3">
-      <div class="input-group-prepend">
-        <span class="input-group-text first-name" id="inputGroup-sizing-sm"></span>
+    <form class="container">
+      <div class="input-group input-group-sm mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text first-name" id="inputGroup-sizing-sm"></span>
+        </div>
+        <input i18n-placeholder placeholder="{{ 'Forms.signUp.firstName' | translate }}" autocomplete='name' type="text" class="form-control" required=""
+          autofocus="">
       </div>
-      <input i18n-placeholder placeholder="{{ 'Forms.signUp.firstName' | translate }}" type="text" class="form-control" required=""
-        autofocus="">
-    </div>
-    <div class="input-group input-group-sm mb-3">
-      <div class="input-group-prepend">
-        <span class="input-group-text second-name" id="inputGroup-sizing-sm"></span>
+      <div class="input-group input-group-sm mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text second-name" id="inputGroup-sizing-sm"></span>
+        </div>
+        <input i18n-placeholder placeholder="{{ 'Forms.signUp.secondName' | translate }}" autocomplete='additional-name' type="text" class="form-control" required=""
+          autofocus="">
       </div>
-      <input i18n-placeholder placeholder="{{ 'Forms.signUp.secondName' | translate }}" type="text" class="form-control" required=""
-        autofocus="">
-    </div>
-    <div class="input-group input-group-sm mb-3">
-      <div class="input-group-prepend">
-        <span class="input-group-text e-mail" id="inputGroup-sizing-sm"></span>
+      <div class="input-group input-group-sm mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text e-mail" id="inputGroup-sizing-sm"></span>
+        </div>
+        <input i18n-placeholder placeholder="{{ 'Forms.signUp.eMail' | translate }}" autocomplete='email' type="text" class="form-control" required=""
+          autofocus="">
       </div>
-      <input i18n-placeholder placeholder="{{ 'Forms.signUp.eMail' | translate }}" type="text" class="form-control" required=""
-        autofocus="">
-    </div>
-    <div class="input-group input-group-sm mb-3">
-      <div class="input-group-prepend">
-        <span class="input-group-text password" id="inputGroup-sizing-sm"></span>
+      <div class="input-group input-group-sm mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text password" id="inputGroup-sizing-sm"></span>
+        </div>
+        <input i18n-placeholder placeholder="{{ 'Forms.signUp.password' | translate }}" autocomplete='new-password' type="password" name="password" class="form-control"
+          id="password" required="" autofocus="">
       </div>
-      <input i18n-placeholder placeholder="{{ 'Forms.signUp.password' | translate }}" type="password" name="password" class="form-control"
-        id="password" required="" autofocus="">
-    </div>
-    <div class="input-group input-group-sm mb-3">
-      <div class="input-group-prepend">
-        <span class="input-group-text password" id="inputGroup-sizing-sm"></span>
+      <div class="input-group input-group-sm mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text password" id="inputGroup-sizing-sm"></span>
+        </div>
+        <input i18n-placeholder placeholder="{{ 'Forms.signUp.re-password' | translate }}" autocomplete='new-password' type="password" name="re-password" class="form-control"
+          id="re-password" required="" autofocus="">
       </div>
-      <input i18n-placeholder placeholder="{{ 'Forms.signUp.re-password' | translate }}" type="password" name="password" class="form-control"
-        id="password" required="" autofocus="">
-    </div>
+    </form>
   </mat-card-content>
   <mat-card-actions>
     <div class="">
-      <button i18n type="button" class="btn btn-primary btn-lg btn-block" (click)="login()">{{ 'Forms.Login.Login' | translate }}</button>
-      <button i18n type="button" class="btn btn-secondary btn-sm btn-block" (click)="signUp()">{{ 'Forms.Login.Sign up' | translate }}</button>
-      <button i18n type="button" class="btn btn-link btn-sm btn-block" (click)="forgot()">{{ 'Forms.Login.Forgot password' | translate }}</button>
+      <button i18n type="button" class="btn btn-secondary btn-block" (click)="signUpWithEmail()">{{ 'Forms.signUp.withEMail' | translate }}</button>
     </div>
   </mat-card-actions>
 </mat-card>

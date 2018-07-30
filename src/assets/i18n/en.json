@@ -21,7 +21,10 @@
 			"eMail": "email",
 			"password": "password",
 			"re-password": "repeat password",
-			"text": "Please enter your email address and a password of your choice."
+			"text": "Please enter your email address and a password of your choice.",
+			"withGoogle": "Sign up with Google",
+			"withFacebook": "Sign up with Facebook",
+			"withEMail": "Sign up with Email"
 		}
 	}
 }
