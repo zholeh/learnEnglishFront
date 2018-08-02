@@ -21,6 +21,16 @@ import { SentenceComponent } from './component/sentence/sentence.component';
 import { StudyWordsFromSentenceComponent } from './forms/study-words-from-sentence/study-words-from-sentence.component';
 import { MaterialModule } from './app.material';
 import { SignUpComponent } from './forms/sign-up/sign-up.component';
+import { SignUpModalDialogComponent } from './forms/sign-up/sign-up-modal-dialog/sign-up-modal-dialog.component';
+import {
+  SocialLoginModule,
+  AuthServiceConfig,
+  GoogleLoginProvider,
+  FacebookLoginProvider,
+  LinkedInLoginProvider
+} from 'angularx-social-login';
+
+
 
 export class HammerConfig extends HammerGestureConfig {
   overrides = <any>{
@@ -33,6 +43,20 @@ function initGlobalParams(data: GlobalDataService) {
   data.setParams('defaultLanguage', 'en');
 }
 
+const config = new AuthServiceConfig([
+  {
+    id: GoogleLoginProvider.PROVIDER_ID,
+    provider: new GoogleLoginProvider('624796833023-clhjgupm0pu6vgga7k5i5bsfp6qp6egh.apps.googleusercontent.com')
+  },
+  {
+    id: FacebookLoginProvider.PROVIDER_ID,
+    provider: new FacebookLoginProvider('561602290896109')
+  }
+]);
+
+export function provideConfig() {
+  return config;
+}
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,8 +67,10 @@ function initGlobalParams(data: GlobalDataService) {
     SentenceComponent,
     StudyWordsFromSentenceComponent,
     SignUpComponent,
+    SignUpModalDialogComponent
   ],
   imports: [
+    SocialLoginModule,
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
@@ -63,10 +89,18 @@ function initGlobalParams(data: GlobalDataService) {
     ],
   ],
   schemas: [NO_ERRORS_SCHEMA],
-  providers: [GlobalDataService, EmitData, {
-    provide: HAMMER_GESTURE_CONFIG,
-    useClass: HammerConfig
-  }],
+  providers: [
+    GlobalDataService, EmitData,
+    {
+      provide: HAMMER_GESTURE_CONFIG,
+      useClass: HammerConfig
+    },
+    {
+      provide: AuthServiceConfig,
+      useFactory: provideConfig
+    }
+  ],
+  entryComponents: [SignUpModalDialogComponent],
   bootstrap: [AppComponent]
 })
 

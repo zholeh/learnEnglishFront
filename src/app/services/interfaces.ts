@@ -5,3 +5,21 @@ export interface ISentence {
     translate: string;
     translateWord: string;
 }
+
+export interface ISocialUser {
+    provider: string;
+    id: string;
+    email: string;
+    name: string;
+    photoUrl: string;
+    firstName: string;
+    lastName: string;
+    authToken: string;
+    idToken: string;
+}
+
+export interface IErrorCodeServer {
+statusCode: string;
+    description: string;
+}
+

@@ -3,11 +3,11 @@
 		"Login": {
 			"Forgot password": "Forgot password",
 			"Sign up": "Sign up",
-            "Welcome to English as a song": "English as a song",
-            "LOGIN": "LOGIN",
-            "login": "login",
-            "Login": "Login",
-            "password": "password"
+			"Welcome to English as a song": "English as a song",
+			"LOGIN": "LOGIN",
+			"login": "login",
+			"Login": "Login",
+			"password": "password"
 		},
 		"TaskCard": {
 			"Enter": "Enter",
@@ -24,7 +24,14 @@
 			"text": "Please enter your email address and a password of your choice.",
 			"withGoogle": "Sign up with Google",
 			"withFacebook": "Sign up with Facebook",
-			"withEMail": "Sign up with Email"
+			"withEMail": "Sign up with Email",
+
+			"modal": {
+				"NOTICE": "NOTICE"
+			}
 		}
+	},
+	"ServerErrors": {
+		"Account with that email address already exists.": "Account with that email address already exists."
 	}
 }

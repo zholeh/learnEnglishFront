@@ -1,6 +1,7 @@
 mat-card {
     max-width: 500px;
     width: 80%;
+    height: 528px;
     mat-card-content {
         .first-name:before {
             content: "\1F464";
@@ -13,6 +14,16 @@ mat-card {
         }
         .password:before {
             content: "\26BF";
+        }
+        :host {
+            height: 100%;
+        }
+        .photo {
+            object-fit: contain;
+        }
+        .card {
+            width: 95%;
+            margin: 0 auto;
         }
     }
 }

@@ -1,12 +1,13 @@
 import { Injectable, EventEmitter } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { Sentence } from './classes';
+import { Sentence, ErrorsCodeServer } from './classes';
 
 @Injectable()
 export class GlobalDataService {
 
   private params = {};
   private ls = {}; // localStorage
+  private errorsCode = new ErrorsCodeServer();
 
   constructor(private translate: TranslateService) { }
   public setParams(param: string, val: any): any {
@@ -29,6 +30,18 @@ export class GlobalDataService {
 
   public changeLanguage(lang: string) {
     this.translate.use(lang);
+  }
+
+  public getErrorByCode(code) {
+    return this.errorsCode.getErrorByCode(code);
+  }
+
+  public translateParam(param): string {
+    let ret = param;
+      this.translate.get(param, {value: 'world'}).subscribe((res: string) => {
+        ret = res;
+    });
+    return ret;
   }
 }
 

@@ -4,10 +4,10 @@
 			"Forgot password": "Нагадати пароль",
 			"Sign up": "Зареєструватись",
 			"Welcome to English as a song": "English as a song",
-            "LOGIN": "ЛОГІН",
+			"LOGIN": "ЛОГІН",
 			"login": "логін",
 			"Login": "Логін",
-            "password": "пароль"
+			"password": "пароль"
 		},
 		"TaskCard": {
 			"Enter": "Ввести",
@@ -21,7 +21,17 @@
 			"eMail": "email",
 			"password": "пароль",
 			"re-password": "пароль",
-			"text": "Будьте ласкаві, заповніть Ваш e-mail та пароль."
+			"text": "Будьте ласкаві, заповніть Ваш e-mail та пароль.",
+			"withGoogle": "Реєстрація через Google",
+			"withFacebook": "Реєстрація через Facebook",
+			"withEMail": "Реєстрація через Email",
+
+			"modal": {
+				"NOTICE": "ПОПЕРЕДЖЕННЯ"
+			}
 		}
+	},
+	"ServerErrors": {
+		"Account with that email address already exists.": "Користувач із вказаним  email існує."
 	}
 }
