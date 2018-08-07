@@ -13,6 +13,25 @@
 			"Enter": "Ввести",
 			"Show": "Показать",
 			"Help": "Помощь"
+		},
+		"signUp": {
+			"REGISTRATION": "РЕГИСТРАЦИЯ",
+			"firstName": "имя",
+			"secondName": "фамилия",
+			"eMail": "email",
+			"password": "пароль",
+			"re-password": "пароль",
+			"text": "Пожалуйста, заполните e-mail и пароль.",
+			"withGoogle": "Регистрация через Google",
+			"withFacebook": "Регистрация через Facebook",
+			"withEMail": "Регистрация через Email",
+
+			"modal": {
+				"NOTICE": "ПРЕДУПРЕЖДЕНИЕ"
+			}
 		}
+	},
+	"ServerErrors": {
+		"Account with that email address already exists.": "Пользователь с указанным email существует."
 	}
 }

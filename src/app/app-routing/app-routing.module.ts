@@ -5,6 +5,7 @@ import { ChooseLanguageComponent } from '../forms/choose-language/choose-languag
 import { EmptyFormsComponent } from '../forms/empty-forms/empty-forms.component';
 import { StudyWordsFromSentenceComponent } from '../forms/study-words-from-sentence/study-words-from-sentence.component';
 import { LoginComponent } from '../forms/login/login.component';
+import { SignUpComponent } from '../forms/sign-up/sign-up.component';
 
 const routes: Routes = [
   {
@@ -19,6 +20,10 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent,
+  },
+  {
+    path: 'signUp',
+    component: SignUpComponent,
   },
 ];
 

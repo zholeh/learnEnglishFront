@@ -3,6 +3,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HammerGestureConfig, HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
 
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
@@ -19,12 +20,43 @@ import { TaskCardComponent } from './component/task-card/task-card.component';
 import { SentenceComponent } from './component/sentence/sentence.component';
 import { StudyWordsFromSentenceComponent } from './forms/study-words-from-sentence/study-words-from-sentence.component';
 import { MaterialModule } from './app.material';
+import { SignUpComponent } from './forms/sign-up/sign-up.component';
+import { SignUpModalDialogComponent } from './forms/sign-up/sign-up-modal-dialog/sign-up-modal-dialog.component';
+import {
+  SocialLoginModule,
+  AuthServiceConfig,
+  GoogleLoginProvider,
+  FacebookLoginProvider,
+  LinkedInLoginProvider
+} from 'angularx-social-login';
+
+
+
+export class HammerConfig extends HammerGestureConfig {
+  overrides = <any>{
+    'swipe': { velocity: 0.4, threshold: 20, direction: 30 } // override default settings
+  };
+}
 
 function initGlobalParams(data: GlobalDataService) {
   data.setLocalStorage('userLanguage', data.getLocalStorage('userLanguage'));
   data.setParams('defaultLanguage', 'en');
 }
 
+const config = new AuthServiceConfig([
+  {
+    id: GoogleLoginProvider.PROVIDER_ID,
+    provider: new GoogleLoginProvider('624796833023-clhjgupm0pu6vgga7k5i5bsfp6qp6egh.apps.googleusercontent.com')
+  },
+  {
+    id: FacebookLoginProvider.PROVIDER_ID,
+    provider: new FacebookLoginProvider('561602290896109')
+  }
+]);
+
+export function provideConfig() {
+  return config;
+}
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,9 +65,12 @@ function initGlobalParams(data: GlobalDataService) {
     LoginComponent,
     TaskCardComponent,
     SentenceComponent,
-    StudyWordsFromSentenceComponent
+    StudyWordsFromSentenceComponent,
+    SignUpComponent,
+    SignUpModalDialogComponent
   ],
   imports: [
+    SocialLoginModule,
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
@@ -53,8 +88,19 @@ function initGlobalParams(data: GlobalDataService) {
       })
     ],
   ],
-  schemas: [ NO_ERRORS_SCHEMA ],
-  providers: [GlobalDataService, EmitData],
+  schemas: [NO_ERRORS_SCHEMA],
+  providers: [
+    GlobalDataService, EmitData,
+    {
+      provide: HAMMER_GESTURE_CONFIG,
+      useClass: HammerConfig
+    },
+    {
+      provide: AuthServiceConfig,
+      useFactory: provideConfig
+    }
+  ],
+  entryComponents: [SignUpModalDialogComponent],
   bootstrap: [AppComponent]
 })
 
