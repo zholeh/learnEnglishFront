@@ -17,8 +17,8 @@
 		"signUp": {
 			"REGISTRATION": "REGISTRATION",
 			"firstName": "first name",
-			"secondName": "second name",
-			"eMail": "email",
+			"lastName": "second name",
+			"email": "email",
 			"password": "password",
 			"re-password": "repeat password",
 			"text": "Please enter your email address and a password of your choice.",

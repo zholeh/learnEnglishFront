@@ -19,7 +19,8 @@ export interface ISocialUser {
 }
 
 export interface IErrorCodeServer {
-statusCode: string;
-    description: string;
+    param: string;
+    msg: string | Array<Object> | Object;
+    value: any;
 }
 

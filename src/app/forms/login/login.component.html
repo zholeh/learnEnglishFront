@@ -1,32 +1,26 @@
 <h2 i18n>{{ 'Forms.Login.Welcome to English as a song' | translate }}</h2>
 <!-- //<h2 >Welcome to English as a song</h2> -->
 <mat-card class="login-card">
-    <button class="mat-button eng" (click)="changeLanguage('en')">
-    </button>
-    <button mat-button (click)="changeLanguage('ua')">
-        <img src="http://i.piccy.info/i9/cf2aa66688ddd972bf98077857abf0d5/1532358178/418/1259412/Ukraine_Flag_16x16.png" />
-    </button>
-    <button mat-button (click)="changeLanguage('ru')">Russian</button>
-    <!-- <mat-card-header>
-        <p>{{ 'Forms.Login.LOGIN' | translate }}</p>
-    </mat-card-header> -->
+    <app-flags></app-flags>
     <mat-card-actions>
     </mat-card-actions>
     <mat-card-content>
-        <div class="input-group input-group-sm mb-3">
-            <div class="input-group-prepend">
-                <span class="input-group-text fa-user fa-cont" id="inputGroup-sizing-sm"></span>
+        <form>
+            <div class="input-group input-group-sm mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text fa-user fa-cont" id="inputGroup-sizing-sm"></span>
+                </div>
+                <input [(ngModel)]="user.email" i18n-placeholder placeholder="{{ 'Forms.Login.email' | translate }}" type="text" name="_username" class="form-control"
+                    autocomplete='name' id="_username" required="" autofocus="">
             </div>
-            <input i18n-placeholder placeholder="{{ 'Forms.Login.login' | translate }}" type="text" name="_username" class="form-control"
-                id="_username" required="" autofocus="">
-        </div>
-        <div class="input-group input-group-sm mb-3">
-            <div class="input-group-prepend">
-                <span class="input-group-text fa-passwords fa-cont" id="inputGroup-sizing-sm"></span>
+            <div class="input-group input-group-sm mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text fa-passwords fa-cont" id="inputGroup-sizing-sm"></span>
+                </div>
+                <input [(ngModel)]="user.password" i18n-placeholder placeholder="{{ 'Forms.Login.password' | translate }}" type="password" name="password" class="form-control"
+                    autocomplete='password' id="password" required="" autofocus="">
             </div>
-            <input i18n-placeholder placeholder="{{ 'Forms.Login.password' | translate }}" type="password" name="password" class="form-control"
-                id="password" required="" autofocus="">
-        </div>
+        </form>
     </mat-card-content>
     <mat-card-actions>
         <div class="">

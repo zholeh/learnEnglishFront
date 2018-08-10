@@ -1,6 +1,9 @@
 <h1 mat-dialog-title>{{ 'Forms.signUp.modal.NOTICE' | translate }}</h1>
 <div mat-dialog-content>
-  <p>{{ data | translate  }}</p>
+  <!-- <ul>
+    <li *ngFor="let item of data">{{ item.msg }}</li>
+  </ul>` -->
+  <p *ngFor="let item of data">{{ item.msg }}</p>
 </div>
 <div mat-dialog-actions>
   <button mat-button (click)="onNoClick()">Ok</button>

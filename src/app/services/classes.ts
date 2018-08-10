@@ -14,6 +14,7 @@ export class Sentence implements ISentence {
 export class SocialUser implements ISocialUser {
 
     constructor(
+        public language: string = '',
         public provider: string = '',
         public id: string = '',
         public email: string = '',
@@ -28,10 +29,15 @@ export class SocialUser implements ISocialUser {
 
 export class ErrorCodeServer implements IErrorCodeServer {
 
-    constructor(
-        public statusCode: string,
-        public description: string,
-    ) { }
+    public param: string;
+    public msg: string;
+    public value: any;
+
+    constructor(param?: string, msg?: string, value?: any) {
+        this.param = this.param || param;
+        this.msg = this.msg || msg;
+        this.value = this.value || value;
+    }
 }
 
 
@@ -53,7 +59,7 @@ export class ErrorsCodeServer {
         }
         let res: ErrorCodeServer;
         for (let i = 0; i < this.errors.length; i++) {
-            if (this.errors[i].statusCode === code) {
+            if (this.errors[i].param === code) {
                 res = this.errors[i];
                 break;
             }

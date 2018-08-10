@@ -17,8 +17,8 @@
 		"signUp": {
 			"REGISTRATION": "РЕГИСТРАЦИЯ",
 			"firstName": "имя",
-			"secondName": "фамилия",
-			"eMail": "email",
+			"lastName": "фамилия",
+			"email": "email",
 			"password": "пароль",
 			"re-password": "пароль",
 			"text": "Пожалуйста, заполните e-mail и пароль.",

@@ -1,0 +1,20 @@
+{
+    "sentences": [
+        {
+            "en": "Hello world!",
+            "ru": "Привет мир!",
+            "cutWordEn": "Hello",
+            "cutWordRu": "Привет",
+            "sound": "звук воспроизведения этого предложения",
+            "rating": 5
+        },
+        {
+            "en": "Hello world!",
+            "ru": "Привет мир!",
+            "cutWordEn": "world",
+            "cutWordRu": "мир",
+            "sound": "звук воспроизведения этого предложения",
+            "rating": 5
+        }
+    ]
+}

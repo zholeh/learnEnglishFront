@@ -1,47 +1,13 @@
-.eng {
-    background-image: url('../../../assets/pic/flag_eng_88x36.gif');
-}
-
-.ukr {
-    background-image: url('../../../assets/pic/flag_ukr_88x36.gif');
-}
-
-.rus {
-    background-image: url('../../../assets/pic/flag_rus_88x36.gif');
-}
-
-.flags {
-    text-indent: -9999px;
-    width: 88px;
-    height: 36px;
-}
-
-.btn:hover {
-    // -webkit-transform: scale(1.1);
-    // -ms-transform: scale(1.1);
-    transform: scale(1.1);
-}
-
-.btn {
-    // -moz-transition: all .3s ease-out;
-    // -o-transition: all .3s ease-out;
-    -webkit-transition: all .3s ease-out;
-}
-
-.mat-button:hover {
-    background-size: 90%;
-    background-position-x: +4.4px; //5%
-    background-position-y: +1.8px; //5%
-}
-
 .image:hover {
-    transform: scale(1.1);
+    transform: scale(1.5);
 }
 
 .image{
     -webkit-border-radius: 50em;
 	-moz-border-radius: 50em;
-    border-radius: 50em;    
+    border-radius: 12px;    
+    margin-left: 4px;
+    margin-right: 4px;
 
-    -webkit-transition: all .3s ease-out;
+    transition: all .3s ease-out;
 }

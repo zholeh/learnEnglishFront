@@ -17,8 +17,8 @@
 		"signUp": {
 			"REGISTRATION": "РЕЄСТРАЦІЯ",
 			"firstName": "ім'я",
-			"secondName": "прізвище",
-			"eMail": "email",
+			"lastName": "прізвище",
+			"email": "email",
 			"password": "пароль",
 			"re-password": "пароль",
 			"text": "Будьте ласкаві, заповніть Ваш e-mail та пароль.",

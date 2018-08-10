@@ -1,3 +1,4 @@
+import { GlobalDataService } from '../../services/global-data.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,7 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FlagsComponent implements OnInit {
 
-  constructor() { }
+  private changeLanguage(lang: string) {
+    this.data.setLocalStorage('userLanguage', lang);
+    this.data.changeLanguage(lang);
+  }
+
+  constructor(private data: GlobalDataService) { }
 
   ngOnInit() {
   }

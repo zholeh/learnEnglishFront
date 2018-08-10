@@ -18,10 +18,11 @@ import { EmptyFormsComponent } from './forms/empty-forms/empty-forms.component';
 import { LoginComponent } from './forms/login/login.component';
 import { TaskCardComponent } from './component/task-card/task-card.component';
 import { SentenceComponent } from './component/sentence/sentence.component';
+import { FlagsComponent } from './component/flags/flags.component';
 import { StudyWordsFromSentenceComponent } from './forms/study-words-from-sentence/study-words-from-sentence.component';
 import { MaterialModule } from './app.material';
 import { SignUpComponent } from './forms/sign-up/sign-up.component';
-import { SignUpModalDialogComponent } from './forms/sign-up/sign-up-modal-dialog/sign-up-modal-dialog.component';
+import { SignUpModalDialogComponent } from './forms/server-error-modal-dialog/server-error-modal-dialog.component';
 import {
   SocialLoginModule,
   AuthServiceConfig,
@@ -65,6 +66,7 @@ export function provideConfig() {
     LoginComponent,
     TaskCardComponent,
     SentenceComponent,
+    FlagsComponent,
     StudyWordsFromSentenceComponent,
     SignUpComponent,
     SignUpModalDialogComponent

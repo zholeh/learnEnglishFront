@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SignUpModalDialogComponent } from './sign-up-modal-dialog.component';
+import { SignUpModalDialogComponent } from './server-error-modal-dialog.component';
 
 describe('SignUpModalDialogComponent', () => {
   let component: SignUpModalDialogComponent;
